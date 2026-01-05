@@ -1,10 +1,66 @@
-# Aprenda Kotlin Com Exemplos: Desafio de Projeto (Lab)
+# Aprenda Kotlin com Exemplos: Desafio de Projeto (Refatorado)
 
-Desafio de Projeto criado para avaliação do conteúdo técnico explorado no repositório [aprenda-kotlin-com-exemplos](https://github.com/digitalinnovationone/aprenda-kotlin-com-exemplos). **Nesse contexto, iremos abstrair o seguinte domínio de aplicação:**
+Este repositório contém a solução para o desafio "Abstraindo Formações da DIO Usando Orientação a Objetos com Kotlin".
+O projeto foi refatorado para seguir boas práticas de desenvolvimento, incluindo:
 
-**A [DIO](https://web.dio.me) possui `Formacoes` incríveis que têm como objetivo oferecer um conjunto de `ConteudosEducacionais` voltados para uma stack tecnológica específica, preparando profissionais de TI para o mercado de trabalho. `Formacoes` possuem algumas características importantes, como `nome`, `nivel` e seus respectivos `conteudosEducacionais`. Além disso, tais experiências educacionais têm um comportamento relevante ao nosso domínio, definido pela capacidade de `matricular` um ou mais `Alunos`.**
+- **POO**: Uso de Classes, Enums e Data Classes.
+- **SOLID**: Princípios de responsabilidade única e inversão de dependência.
+- **Clean Architecture**: Separação em camadas (Domain, Data, Presentation).
+- **MVVM**: Uso de ViewModel para gerenciar a lógica de apresentação.
+- **Testes Unitários**: Testes para garantir a qualidade do código.
 
+## Estrutura do Projeto
 
-```kotlin
-TODO("Crie uma solução em Koltin abstraindo esse domínio. O arquivo [desafio.kt] te ajudará 😉")
 ```
+src/
+├── main/
+│   └── kotlin/
+│       └── me/dio/lab/
+│           ├── data/           # Implementações de dados (Repository)
+│           ├── domain/         # Regras de negócio e Modelos
+│           ├── presentation/   # ViewModel e Lógica de UI
+│           └── Main.kt         # Ponto de entrada (View)
+└── test/
+    └── kotlin/
+        └── me/dio/lab/         # Testes Unitários
+```
+
+## Como Executar
+
+### Opção 1: Usando Gradle (Recomendado)
+
+Certifique-se de ter o Gradle instalado em sua máquina.
+
+Para executar a aplicação:
+
+```bash
+gradle run
+```
+
+Para rodar os testes:
+
+```bash
+gradle test
+```
+
+### Opção 2: Compilação Manual (Caso não tenha Gradle)
+
+Você pode compilar e executar usando o compilador Kotlin (`kotlinc`):
+
+1. Compile o código:
+
+```bash
+find src/main/kotlin -name "*.kt" | xargs kotlinc -include-runtime -d lab.jar
+```
+
+1. Execute o JAR gerado:
+
+```bash
+java -jar lab.jar
+```
+
+## Tecnologias
+
+- Kotlin
+- JUnit 5
+- Gradle
